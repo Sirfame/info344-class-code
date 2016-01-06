@@ -1,0 +1,19 @@
+<?php
+$url = parse_url($_SERVER['REQUEST_URI']);
+$name = substr($url['path'], 1);
+if (strlen($name) == 0) {
+  $name = 'World';
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Hello <?= htmlentities($name) ?>!</h1>
+
+</body>
+<html>
