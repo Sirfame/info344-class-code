@@ -7,10 +7,9 @@ function randomNum() {
 
 function month() {
   $months = array (
-    0 => "bar",
-    1 => "foo",
+    0 => "bar"
   );
-  for($i = 0; $i < 12; $i++) {
+  for($i = 1; $i <= 12; $i++) {
     array_push($months, jdmonthname ($i , 1));
   }
   for($i = 0; $i < count($months); $i++) {
