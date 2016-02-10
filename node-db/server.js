@@ -18,6 +18,12 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/static'));
+
+app.use(function(req, res, next) {
+  console.log('%s, %s', req.method, req.url);
+  next();
+});
+
 app.use('/api/v1', storiesApi.Router(Story));
 
 //local requests to 8080 will get forwarded to vagrant port 80

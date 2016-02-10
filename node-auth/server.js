@@ -17,6 +17,11 @@ var ghStrategy = new GitHubStrategy(ghConfig, function(accessToken, refreshToken
   done(null, profile);
 });
 
+
+//read this from an environment variable
+//set the environment variable using the command
+//  $ export COOKIE_SIG_SECRET=$(uuidgen)
+//and then start the server
 var cookieSigSecret = process.env.COOKIE_SIG_SECRET;
 if(!cookieSigSecret) {
   console.error('Please set COOKIE_SIG_SECRET');

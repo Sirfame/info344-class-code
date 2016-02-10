@@ -42,6 +42,10 @@ app.get('/api/v1/users', function(req, res) {
     {
       email: 'test@test.com',
       displayName: 'Test user'
+    },
+    {
+      email: 'test2@test.com',
+      displayName: 'Test user2'
     }
   ];
   res.json(users);
