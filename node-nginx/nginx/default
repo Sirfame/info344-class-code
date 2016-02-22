@@ -1,0 +1,20 @@
+upstream node_app {
+    server 127.0.0.1:9000;
+}
+
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    listen 443 ssl;
+    ssl_certificate /vagrant/ssl/localhost.crt;
+    ssl_certificate_key /vagrant/ssl/localhost.key;
+
+    location / {
+        root /vagrant/static;
+    }
+
+    location /api {
+        proxy_pass http://node_app;
+    }
+}
